@@ -4,81 +4,103 @@ Reusable UI components for WordPress plugins. Built with React and designed to w
 
 ## Installation
 
+### Via GitHub (Recommended)
+Add the package to your `package.json`:
+
+```json
+{
+  "dependencies": {
+    "@wedevs/plugin-ui": "git+https://github.com/mrabbani/plugin-ui.git"
+  }
+}
+```
+
+Then run:
 ```bash
-npm install @wedevs/plugin-ui
+npm install
+```
+
+### Local Development
+If you are developing locally and want to link the package:
+```json
+{
+  "dependencies": {
+    "@wedevs/plugin-ui": "file:../path/to/plugin-ui"
+  }
+}
 ```
 
 ## Usage
 
 ```tsx
-import { TextField, Select, Switch, FileUpload } from '@wedevs/plugin-ui';
+import { TextField, Button, Alert, Badge } from '@wedevs/plugin-ui';
 
-// Basic text field
-<TextField
-    value={value}
-    onChange={setValue}
-    placeholder="Enter text..."
-/>
+// Example component
+const MyComponent = () => (
+    <div className="space-y-4">
+        <Alert variant="success" label="Tailwind 4 Ready">
+            The implementation is working perfectly!
+        </Alert>
 
-// Select dropdown
-<Select
-    value={selected}
-    onChange={setSelected}
-    options={[
-        { label: 'Option 1', value: 'opt1' },
-        { label: 'Option 2', value: 'opt2' },
-    ]}
-/>
+        <Badge variant="info" label="New Feature" />
 
-// Toggle switch
-<Switch
-    checked={isEnabled}
-    onChange={setIsEnabled}
-    label="Enable feature"
-/>
+        <TextField 
+            value={text} 
+            onChange={setText} 
+            placeholder="Enter some text..."
+        />
 
-// File upload with WordPress media library
-<FileUpload
-    value={fileUrl}
-    onChange={setFileUrl}
-    allowedTypes={['image']}
-/>
+        <Button variant="primary">Click Me</Button>
+    </div>
+);
+```
+
+## Tailwind CSS 4 Integration
+
+This package is designed for **Tailwind CSS 4**. Ensure your consuming project is set up with Tailwind 4.
+
+In your main CSS file:
+```css
+@import "tailwindcss";
+
+/* Optional: Override plugin-ui variables */
+@theme {
+    --color-gray-500: #6B7280;
+}
 ```
 
 ## Components
 
-### Basic Inputs
-- `TextField` - Text input with various types (text, email, tel, url)
-- `NumberField` - Numeric input with min/max/step
+### Feedback & Status
+- `Alert` - Notice/Message with variants (success, info, warning, danger)
+- `Badge` - Status indicator (requires `label` prop)
+- `InfoBox` - Informational block with title and content
+
+### Actions
+- `Button` - Styled buttons with multiple variants and loading states
+- `LucideIcon` - Dynamic icon loader for Lucide icons
+
+### Form Controls
+- `TextField` - Standard text input
+- `NumberField` - Numeric input
 - `TextArea` - Multi-line text input
-- `PasswordField` - Password input with visibility toggle
-- `Select` - Dropdown select
-- `MultiSelect` - Multiple selection dropdown
-- `Checkbox` - Single checkbox
-- `CheckboxGroup` - Multiple checkboxes
-- `Radio` - Radio button group
-- `RadioCapsule` - Styled pill/capsule radio buttons
+- `PasswordField` - Secure password input
+- `Select` - Dropdown selection
+- `Checkbox` & `CheckboxGroup` - Boolean and multiple selection
+- `Radio` & `RadioCapsule` - Single selection from a group
 - `Switch` - Toggle switch
+- `FieldLabel` - Wrapper for input labels with descriptions
 
-### Advanced Inputs
-- `ColorPicker` - Color selection
-- `TimePicker` - Time selection
-- `DatePicker` - Date selection
-- `FileUpload` - WordPress media library integration
-- `RichText` - WYSIWYG editor
-- `Repeater` - Drag-and-drop repeatable fields
-- `CopyField` - Text with copy button
+### Specialized Inputs
+- `SearchInput` - Input with search icon and clearing logic
+- `DebouncedInput` - Input that delays `onChange` execution
+- `CustomizeRadio` - Rich radio options (Cards, Templates, etc.)
+- `MediaUploader` - WordPress Media Library integration
 
-### Display
-- `FieldLabel` - Label with description and tooltip
-- `InfoBox` - Informational message box
-- `Badge` - Status badges
-- `Tooltip` - Hover tooltips
-
-### Layout
-- `Modal` - Dialog/modal windows
-- `Popover` - Floating content
-- `SortableList` - Drag-and-drop sortable list
+### Lists & Layout
+- `List` - Versatile list display for activities or items
+- `Modal` - Accessible dialog windows
+- `Link` - Styled link component
 
 ## Peer Dependencies
 
@@ -91,4 +113,3 @@ This package requires the following WordPress packages:
 ## License
 
 GPL-2.0-or-later
-
