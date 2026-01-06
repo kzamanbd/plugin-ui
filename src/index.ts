@@ -3,7 +3,7 @@
  *
  * Reusable UI components for WordPress plugins.
  */
-
+import './styles.css';
 // Components
 export * from './components';
 
