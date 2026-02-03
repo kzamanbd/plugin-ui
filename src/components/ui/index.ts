@@ -27,6 +27,7 @@ export {
   type DesignSystemSectionProps,
 } from "./design-system-section";
 export { Separator, type SeparatorProps } from "./separator";
+export { Spinner } from "./spinner";
 export { Switch, type SwitchProps } from "./switch";
 export { Textarea, type TextareaProps } from "./textarea";
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
