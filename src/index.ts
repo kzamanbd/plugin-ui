@@ -38,6 +38,8 @@ export {
     ModalFooter, ModalHeader, ModalOverlay, ModalTitle,
     // Separator
     Separator,
+    // Spinner
+    Spinner,
     // Switch
     Switch,
     // Textarea
