@@ -3,7 +3,7 @@
 
 export { Alert, AlertDescription, AlertTitle, type AlertProps, type AlertVariant } from "./alert";
 export { Badge, type BadgeProps, type BadgeVariant } from "./badge";
-export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from "./button";
+export { Button, buttonVariants } from "./button";
 export {
     Card, CardContent, CardDescription, CardFooter, CardHeader,
     CardTitle, type CardContentProps, type CardDescriptionProps, type CardFooterProps, type CardHeaderProps, type CardProps, type CardTitleProps
@@ -27,6 +27,7 @@ export {
   type DesignSystemSectionProps,
 } from "./design-system-section";
 export { Separator, type SeparatorProps } from "./separator";
+export { Spinner } from "./spinner";
 export { Switch, type SwitchProps } from "./switch";
 export { Textarea, type TextareaProps } from "./textarea";
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
