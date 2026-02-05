@@ -2,7 +2,7 @@
 // All components are pure React - no WordPress dependencies
 
 export { Alert, AlertDescription, AlertTitle, type AlertProps, type AlertVariant } from "./alert";
-export { Badge, type BadgeProps, type BadgeVariant } from "./badge";
+export { Badge, badgeVariants} from "./badge";
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from "./button";
 export {
     Card, CardContent, CardDescription, CardFooter, CardHeader,
@@ -35,5 +35,6 @@ export { Toggle } from './toggle'
 export { ToggleGroup, ToggleGroupItem } from './toggle-group'
 export { MatricsCard, type MatricsCardProps } from './MatricsCard'
 export { MatricsGroup, MatricsGroupItem, MatricsGroupProps, MatricsGroupItemProps } from './MatricsGroup';
+export { MatricsPill } from './MatricsPill';
 
 

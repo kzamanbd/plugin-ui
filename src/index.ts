@@ -19,6 +19,7 @@ export {
     Alert, AlertDescription, AlertTitle,
     // Badge
     Badge,
+    badgeVariants,
     // Button
     Button,
     // Card
@@ -52,11 +53,10 @@ export {
     ToggleGroupItem,
     MatricsCard,
     MatricsGroup, MatricsGroupItem, MatricsGroupProps, MatricsGroupItemProps,
+    MatricsPill,
     // Types
     type AlertProps,
     type AlertVariant,
-    type BadgeProps,
-    type BadgeVariant,
     type ButtonProps,
     type ButtonSize,
     type ButtonVariant,
