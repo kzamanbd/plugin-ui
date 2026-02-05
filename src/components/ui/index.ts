@@ -6,7 +6,8 @@ export { Badge, type BadgeProps, type BadgeVariant } from "./badge";
 export { Button, type ButtonProps, type ButtonSize, type ButtonVariant } from "./button";
 export {
     Card, CardContent, CardDescription, CardFooter, CardHeader,
-    CardTitle, type CardContentProps, type CardDescriptionProps, type CardFooterProps, type CardHeaderProps, type CardProps, type CardTitleProps
+    CardTitle,
+  CardAction,
 } from "./card";
 export {
   CurrencyInput,

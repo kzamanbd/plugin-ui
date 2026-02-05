@@ -1,67 +1,69 @@
 import type { HTMLAttributes } from "react";
-import { LucideIcon, Info } from "lucide-react";
+import { LucideIcon, Info, MoveDown, MoveUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Card } from "./card";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip";
+import { twMerge } from "tailwind-merge";
 
 export interface MatricsCardProps extends HTMLAttributes<HTMLDivElement> {
-  icon: LucideIcon;
-  value: string | number;
-  change?: {
-    value: string | number;
-    trend: "up" | "down" | "neutral";
-  };
-  label: string;
-  tooltip?: string;
-  variant?: "light" | "primary";
+  Icon?: LucideIcon;
+  value: string | number | JSX.Element;
+  count?: string | number;
+  countDirection?: 'up' | 'down' | 'neutral';
+  shortDescription: string | JSX.Element;
+  tooltip?: string | JSX.Element;
+  ToolTipIcon?: LucideIcon;
+  onCardClick?: () => void;
 }
 
 export function MatricsCard({
-  icon: Icon,
+  Icon = Info,
   value = '',
-  change,
-  label = '',
+  count = '',
+  countDirection = 'neutral',
+  shortDescription = '',
   tooltip = '',
-  variant = "light",
   className = '',
+  ToolTipIcon = Info,
+  onCardClick = () => {},
   ...props
 }: MatricsCardProps) {
   return (
-    <Card className={cn("p-6 rounded-[3px]", className)} {...props}>
+    <Card className={cn("p-5 rounded-[3px] group cursor-pointer", className)} {...props} onClick={ onCardClick ? onCardClick : () => {} }>
       <div className="flex items-center gap-4">
         <div
           className={cn(
-            "flex h-12 w-12 items-center justify-center rounded-full",
-            variant === "primary"
-              ? "bg-primary text-primary-foreground"
-              : "bg-primary/10 text-primary"
+            "flex h-13 w-13 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground",
           )}
         >
-          <Info className="h-6 w-6" />
+          {
+            <Icon className="h-6 w-6" />
+          }
         </div>
         <div className="flex flex-col gap-1">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold">{value}</span>
-            {change && (
+            <span className="font-bold text-lg">{value}</span>
+            {count && (
               <span
                 className={cn(
-                  "text-sm font-medium",
-                  change.trend === "up" && "text-success",
-                  change.trend === "down" && "text-destructive",
-                  change.trend === "neutral" && "text-muted-foreground"
+                  "text-[12px] leading-3.5 font-semibold",
+                  countDirection === "up" && "text-success",
+                  countDirection === "down" && "text-destructive",
+                  countDirection === "neutral" && "text-muted-foreground"
                 )}
               >
-                {change.trend === "up" ? "+" : change.trend === "down" ? "-" : ""}
-                {change.value}
+                {count}
               </span>
             )}
           </div>
-          <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-            <span>{label}</span>
+          <div className="flex items-center gap-1.5 text-[12px] font-normal text-muted-foreground">
+            <span>{shortDescription}</span>
             {tooltip && (
               <Tooltip>
                 <TooltipTrigger>
-                  <Info className="h-4 w-4 cursor-help" />
+                  {
+                    <ToolTipIcon className="h-4 w-4 cursor-help" />
+                  }
                 </TooltipTrigger>
                 <TooltipContent>
                   { tooltip ?? '' }
