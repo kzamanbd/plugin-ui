@@ -16,7 +16,7 @@ export {
 // ============================================
 export {
     // Alert
-    Alert, AlertDescription, AlertTitle,
+    Alert, AlertDescription, AlertTitle, AlertAction,
     // Badge
     Badge,
     // Button
@@ -53,8 +53,6 @@ export {
     ToggleGroup,
     ToggleGroupItem,
     // Types
-    type AlertProps,
-    type AlertVariant,
     type BadgeProps,
     type BadgeVariant,
     type CardContentProps,

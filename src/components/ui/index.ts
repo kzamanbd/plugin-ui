@@ -1,7 +1,7 @@
 // Core UI Components following ShadCN pattern
 // All components are pure React - no WordPress dependencies
 
-export { Alert, AlertDescription, AlertTitle, type AlertProps, type AlertVariant } from "./alert";
+export { Alert, AlertDescription, AlertTitle, AlertAction } from "./alert";
 export { Badge, type BadgeProps, type BadgeVariant } from "./badge";
 export { Button, buttonVariants } from "./button";
 export {
