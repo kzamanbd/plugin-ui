@@ -36,6 +36,8 @@ export {
     // Modal
     Modal, ModalClose, ModalContent, ModalDescription,
     ModalFooter, ModalHeader, ModalOverlay, ModalTitle,
+    // Notice
+    Notice, NoticeTitle, NoticeAction,
     // Separator
     Separator,
     // Spinner

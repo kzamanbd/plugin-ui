@@ -2,6 +2,7 @@
 // All components are pure React - no WordPress dependencies
 
 export { Alert, AlertDescription, AlertTitle, AlertAction } from "./alert";
+export { Notice, NoticeTitle, NoticeAction } from "./notice";
 export { Badge, type BadgeProps, type BadgeVariant } from "./badge";
 export { Button, buttonVariants } from "./button";
 export {
