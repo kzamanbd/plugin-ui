@@ -33,5 +33,7 @@ export { Textarea, type TextareaProps } from "./textarea";
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
 export { Toggle } from './toggle'
 export { ToggleGroup, ToggleGroupItem } from './toggle-group'
+export { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants } from './tabs'
+export { SelectionType, SelectionItem, selectionItemVariants } from './selection-type'
 
 
