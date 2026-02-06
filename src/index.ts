@@ -81,6 +81,8 @@ export {
     YoutubeCircleDarkLogo,
     type YoutubeCircleLightDarkProps,
 } from './components/logo';
+export { TopBar, type TopBarProps } from './components/top-bar'
+export { CrownIcon, type CrownIconProps } from './components/crown-icon'
 
 // ============================================
 // Theme Presets
