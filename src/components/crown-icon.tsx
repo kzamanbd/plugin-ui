@@ -13,7 +13,7 @@ const CrownIcon = ( { className = '', ...props }: CrownIconProps ) => {
 			// Tells the SVG to inherit the parent's text color
 			stroke="currentColor"
 			// Basic alignment for inline text
-			className={ `inline-block align-middle text-[rgba(239,187,64,1)] ${ className }` }
+			className={ `inline-block align-middle ${ className }` }
 			{ ...props }
 		>
 			<path
