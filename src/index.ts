@@ -88,7 +88,9 @@ export {
     // Spinner
     Spinner,
     // Switch
-    Switch,
+    Switch, 
+    LabeledSwitch, 
+    SwitchCard,
     // Tabs
     Tabs, TabsContent, TabsList,
     TabsTrigger,
@@ -129,6 +131,8 @@ export {
     type SeparatorProps,
     type SliderProps,
     type SwitchProps,
+    type LabeledSwitchProps,
+    type SwitchCardProps,
     type ThumbnailAspect,
     type ThumbnailProps,
     type ThumbnailSize

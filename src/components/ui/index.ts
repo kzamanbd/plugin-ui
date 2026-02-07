@@ -58,7 +58,7 @@ export {
 } from "./design-system-section";
 export { Separator, type SeparatorProps } from "./separator";
 export { Spinner } from "./spinner";
-export { Switch, type SwitchProps } from "./switch";
+export { Switch, LabeledSwitch, SwitchCard, type SwitchProps, type LabeledSwitchProps, type SwitchCardProps } from "./switch";
 export { Textarea } from "./textarea";
 export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
 export { Toggle } from './toggle'
