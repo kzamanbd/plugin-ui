@@ -1,44 +1,52 @@
-import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox"
+import { Radio as RadioPrimitive } from "@base-ui/react/radio"
+import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group"
 import { Field, FieldGroup, FieldLabel, FieldContent, FieldDescription, FieldTitle } from "@/components/ui/field"
 import { cn } from "@/lib/utils"
-import { CheckIcon, MinusIcon } from "lucide-react"
+import { CircleIcon } from "lucide-react"
 
-
-interface CheckboxProps extends CheckboxPrimitive.Root.Props {}
-
-function Checkbox({ className, indeterminate, ...props }: CheckboxProps) {
+function RadioGroup({ className, ...props }: RadioGroupPrimitive.Props) {
   return (
-    <CheckboxPrimitive.Root
-      data-slot="checkbox"
-      indeterminate={indeterminate}
+    <RadioGroupPrimitive
+      data-slot="radio-group"
+      className={cn("grid gap-3 w-full", className)}
+      {...props}
+    />
+  )
+}
+
+interface RadioGroupItemProps extends RadioPrimitive.Root.Props {}
+
+function RadioGroupItem({ className, ...props }: RadioGroupItemProps) {
+  return (
+    <RadioPrimitive.Root
+      data-slot="radio"
       className={cn(
-        "border-border data-checked:bg-primary data-checked:text-primary-foreground dark:data-checked:bg-primary data-checked:border-primary data-indeterminate:bg-primary data-indeterminate:text-primary-foreground data-indeterminate:border-primary aria-invalid:aria-checked:border-primary aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 flex size-4.5 items-center justify-center rounded border shadow-xs transition-shadow focus-visible:ring-3 aria-invalid:ring-3 peer relative shrink-0 outline-none after:absolute after:-inset-x-3 after:-inset-y-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "border-border data-checked:border-primary dark:bg-input/30 focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:aria-invalid:border-destructive/50 flex items-center justify-center size-4.5 rounded-full shadow-xs transition-shadow focus-visible:ring-3 aria-invalid:ring-3 peer relative aspect-square shrink-0 border outline-none after:absolute after:-inset-x-3 after:-inset-y-2 disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
       {...props}
     >
-      <CheckboxPrimitive.Indicator
-        data-slot="checkbox-indicator"
-        className="[&>svg]:size-3.5 grid place-content-center text-current transition-none"
+      <RadioPrimitive.Indicator
+        data-slot="radio-indicator"
+        className="text-primary flex items-center justify-center"
       >
-        {indeterminate ? <MinusIcon /> : <CheckIcon />}
-      </CheckboxPrimitive.Indicator>
-    </CheckboxPrimitive.Root>
+        <CircleIcon className="size-2.5 fill-current" />
+      </RadioPrimitive.Indicator>
+    </RadioPrimitive.Root>
   )
 }
 
 type OrientationVariants = "horizontal" | "vertical" | "responsive";
 type PositionVariants = "left" | "right";
 
-
-interface LabeledCheckboxProps extends CheckboxProps {
+interface LabeledRadioProps extends RadioGroupItemProps {
   label: React.ReactNode;
   description?: React.ReactNode;
   orientation?: OrientationVariants;
   position?: PositionVariants;
 }
 
-function LabeledCheckbox({ 
+function LabeledRadio({ 
   label, 
   description, 
   className,
@@ -46,7 +54,7 @@ function LabeledCheckbox({
   position = "left",
   disabled,
   ...props 
-}: LabeledCheckboxProps) {
+}: LabeledRadioProps) {
   return (
     <FieldGroup className={cn(disabled && "opacity-50")}>
       <Field 
@@ -54,7 +62,7 @@ function LabeledCheckbox({
         data-disabled={disabled}
         className={cn(position === "right" && "flex-row-reverse")}
       >
-        <Checkbox
+        <RadioGroupItem
           className={cn("disabled:opacity-100", className)}
           disabled={disabled}
           {...props}
@@ -74,9 +82,9 @@ function LabeledCheckbox({
   )
 }
 
-interface CheckboxCardProps extends LabeledCheckboxProps {}
+interface RadioCardProps extends LabeledRadioProps {}
 
-function CheckboxCard({ 
+function RadioCard({ 
   label, 
   description, 
   className,
@@ -84,7 +92,7 @@ function CheckboxCard({
   position = "left",
   disabled,
   ...props 
-}: CheckboxCardProps) {
+}: RadioCardProps) {
   return (
     <FieldGroup className={cn(disabled && "opacity-50")}>
       <FieldLabel className={cn(
@@ -96,7 +104,7 @@ function CheckboxCard({
           data-disabled={disabled}
           className={cn(position === "right" && "flex-row-reverse")}
         >
-          <Checkbox 
+          <RadioGroupItem 
             className={cn("disabled:opacity-100", className)}
             disabled={disabled}
             {...props} 
@@ -115,5 +123,5 @@ function CheckboxCard({
   )
 }
 
-export { Checkbox, LabeledCheckbox, CheckboxCard }
-export type { CheckboxProps, LabeledCheckboxProps, CheckboxCardProps }
+export { RadioGroup, RadioGroupItem, LabeledRadio, RadioCard }
+export type { RadioGroupItemProps, LabeledRadioProps, RadioCardProps }
