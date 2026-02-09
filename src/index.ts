@@ -166,12 +166,6 @@ export {
     // Utilities
     useComboboxAnchor,
     // Types
-    type CardContentProps,
-    type CardDescriptionProps,
-    type CardFooterProps,
-    type CardHeaderProps,
-    type CardProps,
-    type CardTitleProps,
     type CircularProgressProps,
     type ComponentPreviewProps,
     type CurrencyInputProps,

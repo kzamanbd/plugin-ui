@@ -10,7 +10,6 @@ export { Avatar,
   AvatarBadge } from "./avatar";
 export { Thumbnail, type ThumbnailProps, type ThumbnailSize, type ThumbnailAspect } from "./thumbnail";
 export { Notice, NoticeTitle, NoticeAction } from "./notice";
-export { Badge, type BadgeProps, type BadgeVariant } from "./badge";
 export { Button, buttonVariants } from "./button";
 export {
   Breadcrumb,
