@@ -70,7 +70,7 @@ export function ButtonToggleGroup({
           key={item.value}
           value={item.value}
           className={cn(
-            "bg-background flex items-center gap-2 px-4! transition-colors",
+            "bg-background flex items-center gap-2 px-4! transition-colors cursor-pointer!",
             "aria-pressed:bg-primary! aria-pressed:text-primary-foreground!",
             "border! border-border! aria-pressed:border-primary!",
             "not-first:border-l-0!",
