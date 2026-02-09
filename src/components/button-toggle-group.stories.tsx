@@ -18,6 +18,7 @@ const meta = {
       control: { type: "radio" },
     },
     value: { control: "text" },
+    defaultValue: { control: "text" },
   },
 } satisfies Meta<typeof ButtonToggleGroup>;
 
@@ -34,14 +35,14 @@ const items = [
 export const Default: Story = {
   args: {
     items,
-    value: "grid",
+    defaultValue: "grid",
   },
 };
 
 export const Small: Story = {
   args: {
     items,
-    value: "grid",
+    defaultValue: "grid",
     size: "sm",
   },
 };
@@ -49,7 +50,7 @@ export const Small: Story = {
 export const Large: Story = {
   args: {
     items,
-    value: "grid",
+    defaultValue: "grid",
     size: "lg",
   },
 };
@@ -61,7 +62,7 @@ export const WithoutIcons: Story = {
       { value: "week", label: "Week" },
       { value: "month", label: "Month" },
     ],
-    value: "week",
+    defaultValue: "week",
   },
 };
 
@@ -71,6 +72,6 @@ export const EndIcons: Story = {
       { value: "asc", label: "Ascending", endIcon: <span>↑</span> },
       { value: "desc", label: "Descending", endIcon: <span>↓</span> },
     ],
-    value: "asc",
+    defaultValue: "asc",
   },
 };

@@ -26,6 +26,8 @@ export interface ButtonToggleGroupProps {
   items: ButtonToggleGroupItem[]
   /** The value of the currently active toggle item (for controlled component) */
   value?: string
+  /** The value of the toggle item that should be active by default (for uncontrolled component) */
+  defaultValue?: string
   /** Callback fired when the active toggle item changes */
   onValueChange?: (value: string) => void
   /**
@@ -46,6 +48,7 @@ export interface ButtonToggleGroupProps {
 export function ButtonToggleGroup({
   items,
   value,
+  defaultValue,
   onValueChange,
   size = "default",
   className,
@@ -53,7 +56,8 @@ export function ButtonToggleGroup({
 }: ButtonToggleGroupProps) {
   return (
     <ToggleGroup
-      value={value ? [value] : []}
+      value={value !== undefined ? [value] : undefined}
+      defaultValue={defaultValue !== undefined ? [defaultValue] : undefined}
       onValueChange={(val) => {
         const nextValue = val[0]
         if (nextValue !== undefined) {
@@ -73,7 +77,9 @@ export function ButtonToggleGroup({
             "bg-background flex items-center gap-2 px-4! transition-colors cursor-pointer!",
             "aria-pressed:bg-primary! aria-pressed:text-primary-foreground!",
             "border! border-border! aria-pressed:border-primary!",
-            "not-first:border-l-0!",
+            "aria-pressed:z-10!",
+            "aria-pressed:border-l!",
+            "[&:not(:first-child)]:border-l-0!",
             "group-data-[spacing=0]/toggle-group:first:rounded-l-[5px]!",
             "group-data-[spacing=0]/toggle-group:last:rounded-r-[5px]!",
             itemClassName
