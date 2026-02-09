@@ -153,7 +153,6 @@ export {
   FieldTitle,
 } from "./field";
 
-<<<<<<< feature/layout-component
 // Layout (responsive app layout with optional header/footer and right sidebar)
 export {
   Layout,
@@ -182,6 +181,3 @@ export {
   type LayoutMenuProps,
   type LayoutMenuSearchProps,
 } from "./layout-menu";
-=======
->>>>>>> main
-
